@@ -17,14 +17,12 @@
 
 #include<bits/stdc++.h>
 using namespace std ;
-#define Max 100
-vector<int>edges[Max] ;
-vector<int> cost[Max] ;
 int main()
 {
 
     int numNodes,numEdges ;
     cin >> numNodes >> numEdges ;
+    vector<int> edges[numEdges+1] ;
     for( int i = 1 ; i <= numEdges ; i++ )
     {
         int x, y  ;
@@ -37,8 +35,8 @@ int main()
     int f = 8 ;
 
     queue<int> q;
-    vector<bool> used(n);
-    vector<int> level(n), p(n);
+    vector<bool> used(n+1);
+    vector<int> level(n+1), p(n+1);
 
     q.push(s);
     used[s] = true;
